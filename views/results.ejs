@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Your MLS Team</title>
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+    <div class="container">
+        <div class="result-box">
+            <h1><span class="fa fa-futbol-o"></span> Your Closest MLS Team Is:</h1>
+            <div class="team-name"><%= team.name %></div>
+            
+            <div class="distance">
+                📍 Approximately <%= distance %> miles away
+            </div>
+            
+            <div class="info">
+                <p><strong> Stadium:</strong> <%= team.stadium %></p>
+                <p><strong>📍 Location:</strong> <%= team.city %>, <%= team.state %></p>
+                <p><strong> Founded:</strong> <%= team.founded %></p>
+                <p><strong> Team Colors:</strong></p>
+                <div class="colors">
+                    <% team.colors.forEach(function(color) { %>
+                        <div class="color-box" style="background-color: <%= color %>;" title="<%= color %>"></div>
+                    <% }); %>
+                </div>
+            </div>
+            
+            <div class="text-center">
+                <a href="/find-team" class="back-btn">← Find Another Team</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html> 
