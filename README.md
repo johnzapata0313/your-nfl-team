@@ -1,4 +1,4 @@
-# Find Your NFL Team 🏈
+# Find Your NFL Team
 
 A web application that helps users discover their closest NFL team based on their location. Simply enter your city and state, and the app will match you with the nearest NFL franchise.
 
