@@ -451,8 +451,10 @@ app.get('/nfl-teams', (req, res) => {
 });
 
 // Show the find team form
-app.get('/find-nfl-team', (req, res) => {
-  res.render('find-nfl-team.ejs');
+app.get('/find-nfl-team', function(req, res) {
+    res.render('find-nfl-team.ejs', {
+        user: req.user || null  // Pass user if exists, otherwise null
+    });
 });
 
 // Process the form and find closest team
@@ -510,7 +512,8 @@ app.post('/find-my-nfl-team', (req, res) => {
     
     console.log('Closest NFL team:', closestTeam.name); 
     
-    res.render('nfl.results.ejs', {
+    res.render('results.ejs', {
+      user: req.user || null,
       team: closestTeam,
       distance: shortestDistance
     });

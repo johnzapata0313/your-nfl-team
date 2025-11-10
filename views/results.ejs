@@ -1,14 +1,84 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Your MLS Team</title>
+    <title>Your NFL Team</title>
     <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body {
+            <% 
+            // Create gradient from team colors
+            var color1 = team.colors[0] || '#000';
+            var color2 = team.colors[1] || team.colors[0] || '#333';
+            %>
+            background: linear-gradient(135deg, <%= color1 %>, <%= color2 %>);
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        .result-box {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 15px;
+            padding: 40px;
+            margin-top: 50px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        }
+        
+        .team-name {
+            font-size: 3em;
+            font-weight: bold;
+            margin: 20px 0;
+            color: <%= color1 %>;
+        }
+        
+        .distance {
+            font-size: 1.5em;
+            margin: 20px 0;
+            color: #555;
+        }
+        
+        .info {
+            margin: 30px 0;
+            font-size: 1.2em;
+        }
+        
+        .colors {
+            display: flex;
+            gap: 10px;
+            margin-top: 10px;
+        }
+        
+        .color-box {
+            width: 50px;
+            height: 50px;
+            border-radius: 5px;
+            border: 2px solid #ddd;
+        }
+        
+        .back-btn {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 12px 30px;
+            background: <%= color1 %>;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 1.1em;
+            transition: all 0.3s;
+        }
+        
+        .back-btn:hover {
+            background: <%= color2 %>;
+            color: white;
+            text-decoration: none;
+            transform: scale(1.05);
+        }
+    </style>
 </head>
 <body>
     <div class="container">
         <div class="result-box">
-            <h1><span class="fa fa-futbol-o"></span> Your Closest MLS Team Is:</h1>
+            <h1><i class="fas fa-football-ball"></i> Your Closest NFL Team Is:</h1>
             <div class="team-name"><%= team.name %></div>
             
             <div class="distance">
@@ -16,10 +86,10 @@
             </div>
             
             <div class="info">
-                <p><strong> Stadium:</strong> <%= team.stadium %></p>
+                <p><strong>🏟 Stadium:</strong> <%= team.stadium %></p>
                 <p><strong>📍 Location:</strong> <%= team.city %>, <%= team.state %></p>
-                <p><strong> Founded:</strong> <%= team.founded %></p>
-                <p><strong> Team Colors:</strong></p>
+                <p><strong>📅 Founded:</strong> <%= team.founded %></p>
+                <p><strong>🎨 Team Colors:</strong></p>
                 <div class="colors">
                     <% team.colors.forEach(function(color) { %>
                         <div class="color-box" style="background-color: <%= color %>;" title="<%= color %>"></div>
@@ -28,9 +98,9 @@
             </div>
             
             <div class="text-center">
-                <a href="/find-team" class="back-btn">← Find Another Team</a>
+                <a href="/find-nfl-team" class="back-btn">← Find Another Team</a>
             </div>
         </div>
     </div>
 </body>
-</html> 
+</html>
