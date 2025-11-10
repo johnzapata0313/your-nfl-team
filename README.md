@@ -2,6 +2,10 @@
 
 A web application that helps users discover their closest NFL team based on their location. Simply enter your city and state, and the app will match you with the nearest NFL franchise.
 
+![5B802207-DD09-49B2-B4D1-E4F92DA27D99](https://github.com/user-attachments/assets/96f7d7b2-feb3-4b7a-abf4-6c9a51913bcf)
+
+[check out the magic](https://your-nfl-team.onrender.com/)
+
 ## What We Built
 
 This project is a full-stack web application that:
@@ -25,10 +29,6 @@ This project is a full-stack web application that:
 - **Bootstrap 3** - CSS framework for responsive design
 - **Font Awesome** - Icon library
 
-### Additional Tools
-- **body-parser** - Parsing incoming request bodies
-- **connect-flash** - Flash messages for user feedback
-
 ## Key Features
 
 - **Team Database Setup**: One-time route to populate database with all 32 NFL teams
@@ -45,56 +45,7 @@ This project is a full-stack web application that:
 
 ## What We Learned
 
-### Database Management
-- How to design and implement a MongoDB schema for storing structured data
-- Setting up one-time database population routes
-- Querying databases with Mongoose methods
-
-### Routing & Request Handling
-- Creating GET and POST routes in Express
-- Handling form submissions and processing user input
-- Debugging route path mismatches (learned the importance of exact route naming!)
-
-### Problem-Solving
-- Troubleshooting common errors:
-  - "Cannot POST" errors (route path mismatches)
-  - "Failed to lookup view" errors (file naming and paths)
-  - "is not a function" errors (module imports and exports)
-  - Database connection issues
-
-### Full-Stack Integration
-- Connecting frontend forms to backend routes
-- Passing data from server to views using EJS templating
-- Understanding the request-response cycle
-
-### Best Practices
-- Organizing code with separate route and model files
-- Using environment-specific configurations
-- Implementing user authentication and session management
-
-## How to Run
-
-1. Install dependencies:
-   ```bash
-   npm install
-   ```
-
-2. Start MongoDB service
-
-3. Start the server:
-   ```bash
-   node server.js
-   ```
-
-4. Set up the database (one time only):
-   ```
-   http://localhost:PORT/setup-nfl-teams
-   ```
-
-5. Visit the application:
-   ```
-   http://localhost:PORT/find-nfl-team
-   ```
+This project involved designing and implementing a MongoDB schema with Mongoose, creating Express GET and POST routes for form handling, and connecting frontend forms to backend logic using EJS templating. Key challenges included debugging route path mismatches that caused "Cannot POST" errors, resolving view lookup and module import issues, and troubleshooting database connection problems. The experience reinforced best practices like organizing code into separate route and model files, using environment-specific configurations, implementing authentication and session management, and understanding the complete request-response cycle in full-stack development.
 
 ## Future Improvements
 
@@ -104,6 +55,3 @@ This project is a full-stack web application that:
 - Add filters for conference/division preferences
 - Include current team statistics and standings
 
----
-
-Built as a learning project to explore full-stack web development with Node.js, Express, and MongoDB.
